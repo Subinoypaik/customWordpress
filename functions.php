@@ -122,3 +122,67 @@ if(isset($_POST['title'])){
 
 
 
+
+
+// mobile // email
+add_action('customize_register', 'theme_contact_customizer');
+function theme_contact_customizer($wp_customize) {
+    $wp_customize->add_section( 'contact_settings_section', array(
+        'title' => 'Contact Info'
+    ) );
+    $wp_customize->add_setting( 'address', array(
+        'default' => '',
+    ) );
+    $wp_customize->add_control( 'address', array(
+        'label'       => 'Address',
+        'description' => 'Add details here',
+        'section'     => 'contact_settings_section',
+        'type'        => 'textarea',
+    ) );
+    $wp_customize->add_setting( 'phone-number', array(
+        'default' => '',
+    ) );
+    $wp_customize->add_control( 'phone-number', array(
+        'label'       => 'Phone Number',
+        'description' => 'Add details here',
+        'section'     => 'contact_settings_section',
+        'type'        => 'text',
+    ) );
+    $wp_customize->add_setting( 'email', array(
+        'default' => '',
+    ) );
+    $wp_customize->add_control( 'email', array(
+        'label'       => 'Email',
+        'description' => 'Add details here',
+        'section'     => 'contact_settings_section',
+        'type'        => 'email',
+    ) );
+
+    $wp_customize->add_setting( 'footer-title', array(
+        'default' => '',
+    ) );
+    $wp_customize->add_control( 'footer-title', array(
+        'label'       => 'footer Title',
+        'description' => 'Add details here',
+        'section'     => 'contact_settings_section',
+        'type'        => 'text',
+    ) );
+    // $wp_customize->add_setting( 'footer-text', array(
+    //     'default' => '',
+    // ) );
+    // $wp_customize->add_control( 'footer-text', array(
+    //     'label'       => 'footer Text',
+    //     'description' => 'Add details here',
+    //     'section'     => 'contact_settings_section',
+    //     'type'        => 'textarea',
+    // ) );
+    // $wp_customize->add_setting( 'fax', array(
+    //     'default' => '',
+    // ) );
+    // $wp_customize->add_control( 'fax', array(
+    //     'label'       => 'fax',
+    //     'description' => 'Add details here',
+    //     'section'     => 'contact_settings_section',
+    //     'type'        => 'text',
+    // ) );
+}
